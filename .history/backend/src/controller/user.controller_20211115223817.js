@@ -11,6 +11,7 @@ const createUser = (req, res) => {
     }
     const user = new User(req.body);
     user.save((err, result) => {
+        console.log(err, result)
         if (err) {
             return res.status(400).json(
                 errorHandler.getUniqueErrorMessage(err)
@@ -25,6 +26,7 @@ const createUser = (req, res) => {
 const editUser = (req, res) => {
     let id = req.params.id;
     const errors = validateEdit(req.body);
+    console.log(errors)
     User.findById(id).exec((err, result) => {
         if (!result.authenticate(req.body.oldPassword)) {
             _.assign(errors, { oldPassword: "Wrong old password" })
