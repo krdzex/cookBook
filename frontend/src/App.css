@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.registrationWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.signInCard, .signUpCart {
+  position: relative;
+  padding: 2em;
+  width: 350px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 5px 35px rgb(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+.signInCard .form, .signUpCart form {
+  position: relative;
+  width: 100%;
+}
+
+.signInCard .form h2, .signUpCart .form h2 {
+  color: #3873d1;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  border-left: 10px solid #3873d1;
+  padding-left: 20px;
+}
+
+.signUpCart .form h2 {
+  color: #aa0000;
+  border-left: 10px solid #aa0000;
+}
+
+.signInCard .form.afterFirst .inputBox, .signUpCart .form.afterFirst .inputBox {
+  position: relative;
+  margin: 8px 20px;
+}
+
+.signInCard .form .inputBox, .signUpCart .form .inputBox {
+  position: relative;
+  margin: 20px;
+}
+
+.signUpCart {
+  height: 450px;
+}
+
+.signInCard .form .inputBox input, .signUpCart .form .inputBox input {
+  width: -webkit-fill-available;
+  outline: none;
+  border: 1px solid black;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.signInCard .form.afterFirst .inputBox input.success, .signUpCart .form.afterFirst .inputBox input.success {
+  border: 2px solid #2ecc71;
+}
+
+.signInCard .form.afterFirst .inputBox input.error, .signUpCart .form.afterFirst .inputBox input.error {
+  border: 2px solid #f43648;
+}
+
+.signInCard .form .inputBox .icon, .signUpCart .form .inputBox .icon {
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  font-size: 25px;
+  color: #3873d1;
+}
+
+.signUpCart .form .inputBox .eyeIcon {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  font-size: 25px;
+  color: #3873d1;
+}
+
+.signInCard .form .inputBox .icon.password, .signUpCart .form .inputBox .icon.password {
+  color: #f43648;
+}
+
+.signInCard .form .inputBox.datalist input, .signUpCart .form .inputBox.datalist input {
+  padding-left: 10px;
+}
+
+.signInCard .form .inputBox input[type="submit"], .signUpCart .form .inputBox input[type="submit"] {
+  max-width: 100px;
+  background-color: #2ecc71;
+  padding: 8px 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1.8px;
+}
+
+.signUpCart .form .inputBox input[type="submit"] {
+  max-width: 150px;
+}
+
+.signInCard .form .inputBox span, .signUpCart .form .inputBox span {
+  color: red;
+  line-height: -19px;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.signInCard .form a, .signUpCart .form a {
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.headerWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  padding: 0.5em 3em 0.5em;
+  background-color: white;
+}
+
+.headerWrapper a, .allRecipes a {
+  text-decoration: none;
+  color: black;
+}
+
+.headerWrapper .rightSide {
+  display: flex;
+  align-items: center;
+}
+
+.headerWrapper .rightSide .avatar {
+  font-size: 50px;
+  color: #3873d1;
+  height: 65px;
+  cursor: pointer;
+  float: right;
+}
+
+.nav-content {
+  position: absolute;
+  margin-top: 5px;
+  overflow: hidden;
+  background-color: #222;
+  color: white;
+  max-height: 0;
+  right: 50px;
+  top: 70px;
+  z-index: 1000;
+}
+
+.nav-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-content a:hover {
+  text-decoration: underline;
+}
+
+.nav-sub {
+  padding: 20px;
+}
+
+.nav-sub ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.nav-sub ul li a {
+  display: inline-block;
+  padding: 5px 0;
+}
+
+.avatar:focus~.nav-content {
+  max-height: 400px;
+  transition: max-height 0.4s ease-in;
+}
+
+.nav-content:hover {
+  max-height: 400px;
+}
+
+.middleOfScreen, .singleRecipeWrapper .upperPart {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  padding-bottom: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.allRecipes {
+  padding: 3em;
+  margin-right: 2%;
+  min-height: 700px;
+  border: 1px solid black;
+  padding: 3em;
+  max-width: 656px;
+  width: 100%;
+  background: white;
+  max-height: 750px;
+  overflow: auto;
+}
+
+.allRecipes .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px black;
+}
+
+.allRecipes .title h2 {
+  font-size: 25px;
+  color: lightslategray;
+}
+
+.rightSplitSide {
+  display: grid;
+  max-width: 550px;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  grid-gap: 20px;
+}
+
+.rightSplitSide .topRatings {
+  border: 1px solid black;
+  background-color: white;
+  padding: 1em;
+  height: 380px;
+  overflow: auto;
+}
+
+.rightSplitSide .latest {
+  border: 1px solid black;
+  background-color: white;
+  padding: 1em;
+  overflow: auto;
+  height: 380px;
+}
+
+.rightSplitSide .latest a, .topRatings a {
+  text-decoration: none;
+  color: black;
+}
+
+.rightSplitSide .latest .title {
+  border-bottom: 1px solid black;
+}
+
+.rightSplitSide .topRatings .title {
+  border-bottom: 1px solid black;
+}
+
+.rightSplitSide .latest .title h2, .rightSplitSide .topRatings .title h2 {
+  font-size: 18px;
+  color: lightslategray;
+}
+
+.recipeHeader, .recipeBottomSide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerAdd {
+  display: flex;
+  align-items: center;
+}
+
+.headerAdd input {
+  height: 30px;
+}
+
+.recipeHeader h2 {
+  margin: 0px;
+}
+
+.recipe {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.singleRecipeLeftSide {
+  display: grid;
+  width: 400px;
+  grid-gap: 0px;
+  margin-right: 5%;
+  height: max-content;
+}
+
+.singleRecipeLeftSide .image, .singleRecipeLeftSide .ingredients .listOfIngredients {
+  width: 100%;
+  height: 350px;
+  background: white;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.singleRecipeLeftSide .image img, .recipeLikeThis .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.singleRecipeLeftSide .ingredients h2 {
+  margin: 0;
+}
+
+.singleRecipeWrapper .upperPart .singleRecipeRightSide {
+  display: grid;
+  max-width: 600px;
+  grid-gap: 0px;
+  width: 40%;
+  height: max-content;
+  position: relative;
+}
+
+.singleRecipeWrapper .upperPart .singleRecipeRightSide .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.singleRecipeWrapper .upperPart .singleRecipeRightSide .header h2 {
+  margin: 0;
+}
+
+.singleRecipeWrapper .upperPart .singleRecipeRightSide .description {
+  width: 100%;
+  height: 300px;
+  background: white;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.singleRecipeWrapper .upperPart .singleRecipeRightSide .instructions {
+  width: 100%;
+  height: 360px;
+  background: white;
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.likeThisWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.likeThisWrapper .listWrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  background: white;
+  width: 75%;
+  margin-bottom: 50px;
+  border: 1px solid black;
+  padding: 20px;
+  height: 100%;
+}
+
+.recipeLikeThis {
+  width: 100%;
+  height: 100%;
+}
+
+.recipeLikeThis .img {
+  width: 100%;
+  border: 1px solid black;
+  height: 250px;
+}
+
+.recipeLikeThis .name p {
+  margin: 0;
+  padding: 0.7rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+  max-height: 23px;
+  -webkit-box-orient: vertical;
+}
+
+.listWrapper a {
+  text-decoration: none;
+  color: black;
+}
+
+.recipeLikeThis .stars {
+  margin-top: 10px;
+}
+
+.singleRecipeWrapper.add .singleRecipeRightSide .instructions, .singleRecipeWrapper.add .ingredients .listOfIngredients, .singleRecipeWrapper.add .singleRecipeRightSide .description {
+  border: none;
+  padding: 0px;
+}
+
+.singleRecipeWrapper.add .ingredients .listOfIngredients textarea, .singleRecipeWrapper.add .singleRecipeRightSide .description textarea, .singleRecipeWrapper.add .singleRecipeRightSide .instructions textarea {
+  width: 100%;
+  height: 85%;
+  resize: none;
+}
+
+.bottom .categorie {
+  display: flex;
+  align-items: center;
+}
+
+.bottom .categorie input {
+  height: 25px;
+  width: 220px;
+}
+
+datalist {
+  max-height: 100px !important;
+  height: 50px !important;
+  overflow-y: auto;
+}
+
+.singleRecipeRightSide input[type="submit"] {
+  border: none;
+  height: 50px;
+  width: 100px;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #2ecc71;
+  margin-bottom: 20px;
+}
+
+.edit {
+  position: absolute;
+  right: -50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.table, .ingredientTable {
+  width: 100%;
+  height: 700px;
+  border: 1px solid black;
+  overflow: auto;
+}
+
+.ingredientTable {
+  height: 500px;
+  overflow: auto;
+}
+
+.ingredientTable.editing {
+  position: relative;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.ingredientTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table table thead, .ingredientTable table thead {
+  position: sticky;
+  top: 0;
+}
+
+.table table thead td, .ingredientTable table thead td {
+  text-align: center;
+  font-weight: 700;
+  border-right: 1px solid black;
+  cursor: pointer;
+}
+
+.table table tbody td, .ingredientTable table tbody td {
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.table table tbody td:last-child, .ingredientTable table tbody td:last-child {
+  border-right: none
+}
+
+.table table thead td:last-child {
+  border-right: none;
+}
+
+.ingredientTable table thead td:last-child {
+  border-right: none;
+  width: 80px;
+}
+
+.table table tbody tr {
+  height: 60px;
+}
+
+.table table thead tr {
+  border-bottom: 1px solid black;
+  height: 50px;
+  background-color: lightgray;
+}
+
+.ingredientTable table thead tr {
+  border-bottom: 1px solid black;
+  height: 30px;
+  background-color: lightgray;
+}
+
+.myRecipeWrapper {
+  margin: 0px 10%;
+  margin-top: 2%;
+}
+
+.listOfIngredients input {
+  height: 30px;
+}
+
+.listOfIngredients input[type="button"] {
+  background-color: #2ecc71;
+  height: 36px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.listOfIngredients input[type="button"].cancel {
+  height: 36px;
+  background-color: red;
+  cursor: pointer;
+}
+
+.listOfIngredients .wrapperAddForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cover {
+  position: absolute;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.ingredientTable.single table thead td:last-child {
+  width: auto;
+}
+
+.ingredientTable.single {
+  height: 350px;
+  overflow: auto;
+}
+
+.popUp, .popUpError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  top: -150px;
+  right: 20px;
+  height: 100px;
+  background-color: rgb(157, 197, 159);
+  border-radius: 20px;
+  transition: 0.5s ease-in-out;
+  transition-delay: 0s;
+  padding: 0 10px;
+  opacity: 0;
+  z-index: 10000;
+}
+
+.popUpError {
+  background-color: rgb(230, 30, 30);
+  color: white;
+}
+
+@keyframes showPopUp {
+  0% {
+    top: -100px
+  }
+  80% {
+    top: 100px
+  }
+  90% {
+    top: 95px
+  }
+  100% {
+    top: 100px
+  }
+}
+
+.popUp.show, .popUpError.show {
+  transition-delay: 0.3s;
+  opacity: 1;
+  top: 100px;
+  animation: showPopUp 0.8s ease-in-out;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile+label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.myRecipesGrid {
+  display: flex;
+  align-items: center;
+  justify-Content: center;
+}
+
+@media (max-width: 900px) {
+  .middleOfScreen {
+    flex-direction: column;
+    align-items: center
+  }
+  .rightSplitSide {
+    margin-top: 50px;
+  }
+  .allRecipes {
+    width: 70%
+  }
+  .myRecipesGrid {
+    display: block;
+  }
+  .upperPart.view {
+    flex-direction: column;
+    align-items: center
+  }
+  .singleRecipeLeftSide.view {
+    margin-right: 0px;
+  }
+  .singleRecipeLeftSide.view .image {
+    width: initial;
+  }
+  .singleRecipeWrapper.view .upperPart .singleRecipeRightSide .description, .singleRecipeWrapper.view .upperPart .singleRecipeRightSide .instructions {
+    width: initial;
+  }
+  .singleRecipeWrapper.view .upperPart .singleRecipeRightSide {
+    width: 60%;
+  }
+  .singleRecipeWrapper.add .upperPart .singleRecipeRightSide {
+    width: initial;
+  }
+}
+
+@media(max-width: 680px) {
+  .singleRecipeWrapper .upperPart.add,.upperPart.editing {
+    flex-direction: column;
+    align-items: center;
+  }
+  .singleRecipeLeftSide{
+    width: initial;
+  }
+  .singleRecipeWrapper.add .upperPart .singleRecipeRightSide {
+    width: initial;
+    margin-top: 300px;
+  }
+  .singleRecipeLeftSide.view .ingredients .listOfIngredients {
+    height: initial;
+  }
+  .singleRecipeLeftSide.view {
+    width: 60%;
+    margin-right: 0px;
+  }
+  .singleRecipeLeftSide.add {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 768px){
+  .likeThisWrapper .listWrapper{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 414px){
+  .likeThisWrapper .listWrapper{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .likeThisWrapper{
+    height: initial;
+  }
+}
+
+@media(max-width: 680px) {}
